@@ -15,13 +15,17 @@
 
 /* navbar styling */
 .navbar {
-    background-color: transparent;
     position: fixed;
     width: 100%;
-    padding: 15px 0;
+    padding: 30px 0;
     font-family: 'Ubuntu', sans-serif;
-    border-bottom: 1px solid black;
-    box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px,
+    box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    background-color: crimson;
+    padding: 15px 0;
 }
 
 .navbar .max-width {
@@ -33,7 +37,16 @@
 .navbar .logo a{
     font-size: 35px;
     font-weight: 600;
-    color: #7785B1;
+    color: #fff;
+}
+
+.navbar .logo a span {
+    color: crimson;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky .logo a span {
+    color: #fff;
 }
 
 .navbar .menu li {
@@ -46,16 +59,31 @@
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
+    transition: color .3s ease;
 }
 
+.navbar .menu li a:hover {
+    color: crimson;
+}
+
+.navbar.sticky .menu li a:hover {
+    color: #fff;
+}
+
+.menu-btn {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
 /* home section styling */
 .home {
     display: flex;
-    background: url('images/bg.svg') no-repeat center;
+    background: url('images/bg.png') no-repeat center;
     background-size: cover;
     height: 100vh;
     min-height: 500px;
-    color: rgb(35, 34, 107);
+    color: #fff;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -76,4 +104,111 @@
 .home .home-content .text-3 {
     font-size: 40px;
     margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+    color: crimson;
+    font-weight: 500;
+}
+
+.home .home-content a {
+    display: inline-block;
+    background-color: crimson;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all .3s ease;
+}
+
+.home .home-content a:hover {
+    background-color: transparent;
+    color: crimson;
+}
+
+/* responsive media query */
+@media (max-width: 1100px) {
+    .home .max-width {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 990px) {
+    .max-width {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 947px) {
+    .menu-btn {
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i {
+        transition: all 0.5s ease;
+    }
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background-color: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all .5s ease-in-out;
+    }
+    .navbar .menu.active {
+        left: 0;
+    }
+    .navbar .menu li {
+        display: block;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;;
+    }
+    .home .home-content .text-2 {
+        font-size: 70px;
+    }
+    .home .home-content .text-3 {
+        font-size: 35px;
+    }
+    .home .home-content a {
+        font-size: 22px;
+        padding-top: 10px 30px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width {
+        padding: 0 25px;
+    }
+    .home .home-content .text-2 {
+        font-size: 60px;
+    }
+    .home .home-content .text-3 {
+        font-size: 30px;
+    }
+    .home .home-content a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 490px) {
+    .home .home-content .text-2 {
+        font-size: 50px;
+    }
+    .home .home-content .text-3 {
+        font-size: 25px;
+    }
+    .home .home-content a {
+        padding: 8px 20px;
+    }
 }
