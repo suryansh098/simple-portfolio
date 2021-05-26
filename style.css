@@ -166,13 +166,14 @@ section .title::after {
     transform: translateX(-50%);
 }
 
-.about, .services, .skills, .team {
+.about, .services, .skills, .team, .contact {
     font-family: 'Poppins', sans-serif;
 }
 
 .about .about-content,
 .services .services-content,
-.skills .skills-content{
+.skills .skills-content,
+.contact .contact-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -401,7 +402,7 @@ section .title::after {
 
 .team .carousel .card .text {
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 600;
     margin: 10px 0 7px 0;
 }
 
@@ -443,6 +444,119 @@ section .title::after {
     background-color: crimson !important;
 }
 
+/* contact section */
+.contact .title::after {
+    content: "get in touch";
+}
+
+.contact .contact-content .column {
+    width: calc(50% - 30px);
+}
+
+.contact .contact-content .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    position: relative;
+    top: 0;
+
+}
+
+.contact .contact-content .left p {
+    text-align: justify;
+}
+
+.contact .contact-content .left .icons {
+    margin: 10px 0;
+}
+
+.contact .contact-content .row {
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+
+.contact .contact-content .row .info {
+    margin-left: 30px;
+}
+
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: crimson;
+}
+
+.contact .contact-content .row .info .head {
+    font-weight: 500;
+}
+
+.contact .contact-content .row .info .sub-title {
+    color: #333;
+}
+
+.contact .contact-content .right form .fields {
+    display: flex;
+}
+
+.contact .contact-content .right form .field,
+.contact .contact-content .right form .fields .field {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.contact .contact-content .right form .textarea {
+    height: 110px;
+    width: 100%;
+}
+
+.contact .contact-content .right form .name {
+    margin-right: 10px;
+}
+
+.contact .contact-content .right form .email {
+    margin-left: 10px;
+}
+
+.contact .contact-content .right form .field input,
+.contact .contact-content .right form .field textarea {
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact .contact-content .right form .field textarea {
+    padding-top: 10px;
+    resize: none;
+}
+
+.contact .contact-content .right form .button {
+    height: 47px;
+    width: 170px;
+}
+
+.contact .contact-content .right form .button button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid crimson;
+    background-color: crimson;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact .contact-content .right form .button button:hover {
+    color: crimson;
+    background-color: transparent;
+}
+
 /* responsive media query */
 @media (max-width: 1300px) {
     .home .max-width {
@@ -454,6 +568,10 @@ section .title::after {
     .about .about-content .left img {
         width: 280px;
         height: 350px;
+    }
+    .contact .contact-content .right form .textarea {
+        height: 133px;
+        width: 100%;
     }
 }
 
@@ -524,7 +642,8 @@ section .title::after {
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
-    .skills .skills-content .column {
+    .skills .skills-content .column,
+    .contact .contact-content .column {
         width: 100%;
         margin-bottom: 35px;
     }
