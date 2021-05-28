@@ -7,6 +7,10 @@
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .max-width {
     max-width: 1300px;
     padding: 0 80px;
@@ -166,7 +170,7 @@ section .title::after {
     transform: translateX(-50%);
 }
 
-.about, .services, .skills, .team, .contact {
+.about, .services, .skills, .team, .contact, footer {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -555,6 +559,23 @@ section .title::after {
 .contact .contact-content .right form .button button:hover {
     color: crimson;
     background-color: transparent;
+}
+
+/* footer section */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px 23px;
+    text-align: center;
+}
+
+footer span a{
+    color: crimson;
+}
+
+footer span a:hover {
+    text-decoration: underline;
+
 }
 
 /* responsive media query */
