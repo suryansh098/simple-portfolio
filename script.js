@@ -25,6 +25,21 @@ $(document).ready(function() {
         $('.menu-btn i').toggleClass("active");
     });
 
+    // typewriter animation
+    var typed = new Typed(".typing", {
+        strings: ["Developer.", "Web Designer.", "Freelancer."],
+        typeSpeed: 100,
+        backSpeed: 30,
+        loop: true
+    });
+
+    var typed = new Typed(".typing-2", {
+        strings: ["Developer.", "Web Designer.", "Freelancer."],
+        typeSpeed: 100,
+        backSpeed: 30,
+        loop: true
+    });
+
     // owl carousel
     $('.carousel').owlCarousel({
         margin: 20,
